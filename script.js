@@ -2,6 +2,7 @@
     'use strict';
 
     const nav = document.getElementById('mainNav');
+    const navShell = document.querySelector('.nav-shell');
     const toggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
     const overlay = document.getElementById('mobileOverlay');
@@ -56,41 +57,61 @@
     updateScrollProgress();
 
     /* ── Mobile menu ── */
+    const placeNavLinks = () => {
+        if (!navLinks || !navShell) return;
+        if (mobileMq.matches) {
+            if (navLinks.parentElement !== document.body) {
+                document.body.appendChild(navLinks);
+            }
+        } else if (navLinks.parentElement !== navShell) {
+            navShell.appendChild(navLinks);
+        }
+    };
+
     function closeMenu() {
         if (!toggle || !navLinks || !overlay) return;
         toggle.classList.remove('active');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');
         navLinks.classList.remove('open');
+        nav?.classList.remove('menu-open');
         overlay.classList.remove('active');
         overlay.setAttribute('aria-hidden', 'true');
         if (mobileMq.matches) {
             navLinks.setAttribute('aria-hidden', 'true');
+            navLinks.setAttribute('inert', '');
         } else {
             navLinks.removeAttribute('aria-hidden');
+            navLinks.removeAttribute('inert');
         }
         document.body.style.overflow = '';
     }
 
     function openMenu() {
         if (!toggle || !navLinks || !overlay || !mobileMq.matches) return;
+        placeNavLinks();
         navLinks.classList.add('open');
+        nav?.classList.add('menu-open');
         toggle.classList.add('active');
         toggle.setAttribute('aria-expanded', 'true');
         toggle.setAttribute('aria-label', 'Close menu');
         overlay.classList.add('active');
         overlay.setAttribute('aria-hidden', 'false');
-        navLinks.setAttribute('aria-hidden', 'false');
+        navLinks.removeAttribute('aria-hidden');
+        navLinks.removeAttribute('inert');
         document.body.style.overflow = 'hidden';
     }
 
     const syncNavMode = () => {
         if (!navLinks) return;
+        placeNavLinks();
         if (!mobileMq.matches) {
             closeMenu();
             navLinks.removeAttribute('aria-hidden');
+            navLinks.removeAttribute('inert');
         } else if (!navLinks.classList.contains('open')) {
             navLinks.setAttribute('aria-hidden', 'true');
+            navLinks.setAttribute('inert', '');
         }
         onLayoutChange();
     };
@@ -104,12 +125,17 @@
             if (e.key === 'Escape') closeMenu();
         });
 
-        toggle.addEventListener('click', () => {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.contains('open') ? closeMenu() : openMenu();
         });
 
         overlay.addEventListener('click', closeMenu);
-        navLinks.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+        navLinks.querySelectorAll('a').forEach((a) => {
+            a.addEventListener('click', () => {
+                closeMenu();
+            });
+        });
     }
 
     /* ── Section fade-in ── */
