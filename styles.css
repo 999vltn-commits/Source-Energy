@@ -1863,21 +1863,34 @@ section {
     flex: 1 1 auto;
 }
 .love-dot {
-    width: 6px;
-    height: 6px;
+    position: relative;
+    flex: 0 0 auto;
+    width: 2rem;
+    height: 2rem;
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.14);
+    background: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+}
+.love-dot::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
     transition: transform 0.18s ease-out, background 0.18s ease-out, box-shadow 0.18s ease-out;
 }
-.love-dot.is-active {
+.love-dot.is-active::before {
     background: rgba(228, 234, 244, 0.9);
-    transform: scale(1.2);
+    transform: scale(1.15);
     box-shadow: 0 0 10px rgba(210, 218, 232, 0.45);
 }
-.love-dot:hover:not(.is-active) {
+.love-dot:hover:not(.is-active)::before {
     background: rgba(201, 167, 235, 0.4);
 }
 
@@ -2172,11 +2185,14 @@ section {
         touch-action: manipulation;
     }
     .love-dot {
-        width: 7px;
-        height: 7px;
-        padding: 18px;
-        background-clip: content-box;
-        touch-action: manipulation;
+        width: 2.75rem;
+        height: 2.75rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .love-dot::before {
+        width: 1rem;
+        height: 1rem;
     }
 
     .cta-section { padding: 4rem max(1rem, env(safe-area-inset-left)) 4rem max(1rem, env(safe-area-inset-right)); }
