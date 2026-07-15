@@ -1,0 +1,540 @@
+/* Hero — heart-powered line galaxy flower (silver + rose core) */
+
+.hero {
+    overflow: hidden;
+}
+
+.hero-lines-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hero-deco {
+    z-index: 1;
+}
+
+.hero-content,
+.hero-scroll {
+    z-index: 3;
+}
+
+/* ── Wire bloom shell ── */
+.hero-wire-bloom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(96vw, 760px);
+    height: min(96vw, 760px);
+    transform: translate(-50%, -50%);
+    animation: wireBloomFloat 18s ease-in-out infinite;
+}
+
+@keyframes wireBloomFloat {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    50% { transform: translate(-50%, calc(-50% - 10px)) rotate(0.6deg); }
+}
+
+.hero-wire-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Nova rings */
+.hero-nova-shell {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: novaDrift 22s linear infinite;
+}
+
+.hero-nova-shell--rev {
+    animation-direction: reverse;
+    animation-duration: 30s;
+}
+
+.hero-nova-ring {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.07);
+    stroke-width: 0.5;
+    stroke-dasharray: 3 14;
+}
+
+.hero-nova-ring--b {
+    stroke-dasharray: 8 18;
+    stroke-opacity: 0.5;
+}
+
+@keyframes novaDrift {
+    to { transform: rotate(360deg); }
+}
+
+/* Sacred geometry */
+.hero-hex-line {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.09);
+    stroke-width: 0.55;
+    stroke-linejoin: round;
+    stroke-dasharray: 5 12;
+    animation: hexPulse 10s ease-in-out infinite;
+}
+
+.hero-hex-line--inner {
+    stroke-opacity: 0.55;
+    animation-delay: -3.5s;
+}
+
+@keyframes hexPulse {
+    0%, 100% { stroke-opacity: 0.06; }
+    50% { stroke-opacity: 0.22; }
+}
+
+/* Power beams — heart → rim stars */
+.hero-power-beam {
+    stroke: rgba(255, 220, 230, 0.14);
+    stroke-width: 0.65;
+    stroke-linecap: round;
+    stroke-dasharray: 6 18;
+    animation: powerBeamFlow 3.2s linear calc(var(--i, 0) * 0.18s) infinite;
+}
+
+@keyframes powerBeamFlow {
+    0% { stroke-dashoffset: 48; stroke-opacity: 0.1; }
+    40% { stroke-dashoffset: 12; stroke-opacity: 0.38; }
+    100% { stroke-dashoffset: -120; stroke-opacity: 0.12; }
+}
+
+/* Outer petals */
+.hero-wire-petals > g {
+    animation: petalGroupShimmer 11s ease-in-out infinite;
+}
+
+.hero-wire-petals > g:nth-child(odd) { animation-delay: -2s; }
+.hero-wire-petals > g:nth-child(3n) { animation-delay: -5s; }
+
+@keyframes petalGroupShimmer {
+    0%, 100% { opacity: 0.82; }
+    50% { opacity: 1; }
+}
+
+.hero-wire-petal {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.28);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    stroke-dasharray: 300;
+    stroke-dashoffset: 0;
+    animation: wirePetalShimmer 8s ease-in-out infinite;
+}
+
+.hero-wire-petals > g:nth-child(1) .hero-wire-petal { animation-delay: 0s; }
+.hero-wire-petals > g:nth-child(2) .hero-wire-petal { animation-delay: -0.7s; }
+.hero-wire-petals > g:nth-child(3) .hero-wire-petal { animation-delay: -1.4s; }
+.hero-wire-petals > g:nth-child(4) .hero-wire-petal { animation-delay: -2.1s; }
+.hero-wire-petals > g:nth-child(5) .hero-wire-petal { animation-delay: -2.8s; }
+.hero-wire-petals > g:nth-child(6) .hero-wire-petal { animation-delay: -3.5s; }
+.hero-wire-petals > g:nth-child(7) .hero-wire-petal { animation-delay: -4.2s; }
+.hero-wire-petals > g:nth-child(8) .hero-wire-petal { animation-delay: -4.9s; }
+.hero-wire-petals > g:nth-child(9) .hero-wire-petal { animation-delay: -5.6s; }
+.hero-wire-petals > g:nth-child(10) .hero-wire-petal { animation-delay: -6.3s; }
+.hero-wire-petals > g:nth-child(11) .hero-wire-petal { animation-delay: -7s; }
+.hero-wire-petals > g:nth-child(12) .hero-wire-petal { animation-delay: -7.7s; }
+
+@keyframes wirePetalShimmer {
+    0%, 100% { stroke-opacity: 0.2; }
+    50% { stroke-opacity: 0.48; }
+}
+
+.hero-wire-vein {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.12);
+    stroke-width: 0.45;
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+    animation: veinGlow 7s ease-in-out infinite;
+}
+
+@keyframes veinGlow {
+    0%, 100% { stroke-opacity: 0.08; }
+    50% { stroke-opacity: 0.28; }
+}
+
+.hero-petal-flare {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.35);
+    stroke-width: 0.5;
+    stroke-linecap: round;
+    opacity: 0;
+    animation: flarePop 6s ease-in-out 3.8s infinite;
+}
+
+@keyframes flarePop {
+    0%, 70%, 100% { opacity: 0; transform: scale(0.8); }
+    78% { opacity: 0.9; transform: scale(1.15); }
+    86% { opacity: 0.35; transform: scale(1); }
+}
+
+/* Inner petal layer */
+.hero-wire-petal-inner {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.16);
+    stroke-width: 0.55;
+    stroke-linecap: round;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 0;
+    animation: innerPetalGlow 9s ease-in-out infinite;
+}
+
+@keyframes innerPetalGlow {
+    0%, 100% { stroke-opacity: 0.1; }
+    50% { stroke-opacity: 0.3; }
+}
+
+/* Filigree arcs */
+.hero-filigree-arc {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 0.45;
+    stroke-linecap: round;
+    stroke-dasharray: 90;
+    stroke-dashoffset: 0;
+    animation: filigreeShine 12s ease-in-out infinite;
+}
+
+.hero-filigree-arc:nth-child(2) { animation-delay: -2s; }
+.hero-filigree-arc:nth-child(3) { animation-delay: -4s; }
+.hero-filigree-arc:nth-child(4) { animation-delay: -6s; }
+.hero-filigree-arc:nth-child(5) { animation-delay: -8s; }
+.hero-filigree-arc:nth-child(6) { animation-delay: -10s; }
+
+@keyframes filigreeShine {
+    0%, 100% { stroke-opacity: 0.06; }
+    50% { stroke-opacity: 0.24; }
+}
+
+/* Inner rings & spirals */
+.hero-wire-ring {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.11);
+    stroke-width: 0.55;
+    stroke-dasharray: 4 8;
+    animation: wireRingPulse 6.5s ease-in-out infinite;
+}
+
+.hero-wire-ring:nth-child(2) { animation-delay: -2.2s; }
+.hero-wire-ring:nth-child(3) { animation-delay: -4.4s; stroke-opacity: 0.65; }
+
+@keyframes wireRingPulse {
+    0%, 100% { stroke-opacity: 0.07; }
+    50% { stroke-opacity: 0.26; }
+}
+
+.hero-wire-spiral {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.26);
+    stroke-width: 0.7;
+    stroke-linecap: round;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 0;
+    animation: wireSpiralGlow 5.5s ease-in-out infinite;
+}
+
+.hero-wire-spiral--b {
+    animation-delay: -1.2s;
+    stroke-opacity: 0.55;
+}
+
+.hero-wire-spiral--c,
+.hero-wire-spiral--d {
+    stroke-width: 0.5;
+    stroke-dasharray: 120;
+    stroke-dashoffset: 0;
+    animation-duration: 6s;
+}
+
+.hero-wire-spiral--c { animation-delay: -2s; }
+.hero-wire-spiral--d { animation-delay: -3.2s; }
+
+@keyframes wireSpiralGlow {
+    0%, 100% { stroke-opacity: 0.12; }
+    50% { stroke-opacity: 0.38; }
+}
+
+/* Constellation webs */
+.hero-wire-constellation {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.13);
+    stroke-width: 0.5;
+    stroke-linejoin: round;
+    stroke-dasharray: 5 11;
+    animation: constellationTwinkle 7s ease-in-out infinite;
+}
+
+.hero-wire-constellation--inner {
+    stroke-opacity: 0.55;
+    stroke-dasharray: 4 9;
+    animation-delay: -2.8s;
+    animation-duration: 9s;
+}
+
+@keyframes constellationTwinkle {
+    0%, 100% { stroke-opacity: 0.07; }
+    50% { stroke-opacity: 0.3; }
+}
+
+/* ── Heart core (power source) ── */
+.hero-heart-core {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.hero-heart-aura {
+    opacity: 0.62;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heartAuraBreath 3.2s ease-in-out infinite;
+}
+
+@keyframes heartAuraBreath {
+    0%, 100% { opacity: 0.48; transform: scale(0.96); }
+    50% { opacity: 0.78; transform: scale(1.04); }
+}
+
+.hero-heart-pulse-ring {
+    fill: none;
+    stroke: rgba(232, 140, 168, 0.28);
+    stroke-width: 0.55;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heartRingExpand 3.2s ease-out infinite;
+}
+
+.hero-heart-pulse-ring--b {
+    stroke: rgba(255, 255, 255, 0.14);
+    animation-delay: -1.6s;
+}
+
+@keyframes heartRingExpand {
+    0% { transform: scale(0.6); stroke-opacity: 0.42; }
+    75% { stroke-opacity: 0.08; }
+    100% { transform: scale(1.45); stroke-opacity: 0; }
+}
+
+.hero-heart-outline {
+    fill: rgba(232, 120, 152, 0.06);
+    stroke: rgba(255, 235, 242, 0.82);
+    stroke-width: 0.95;
+    stroke-linejoin: round;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heartBeat 3.2s ease-in-out infinite;
+}
+
+.hero-heart-inner {
+    fill: rgba(255, 255, 255, 0.05);
+    stroke: rgba(255, 210, 222, 0.38);
+    stroke-width: 0.48;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heartBeat 3.2s ease-in-out infinite;
+    animation-delay: -0.06s;
+}
+
+.hero-heart-seam {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.28);
+    stroke-width: 0.45;
+    stroke-linecap: round;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+    animation: seamGlow 4s ease-in-out infinite;
+}
+
+@keyframes seamGlow {
+    0%, 100% { stroke-opacity: 0.15; }
+    50% { stroke-opacity: 0.5; }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    18% { transform: scale(1.055); }
+    36% { transform: scale(1); }
+}
+
+.hero-heart-spark {
+    fill: #fff;
+    opacity: 0.38;
+    animation: heartSpark 4s ease-in-out infinite;
+}
+
+.hero-heart-spark:nth-child(1) { animation-delay: 0s; }
+.hero-heart-spark:nth-child(2) { animation-delay: -0.6s; }
+.hero-heart-spark:nth-child(3) { animation-delay: -1.2s; }
+.hero-heart-spark:nth-child(4) { animation-delay: -1.8s; }
+.hero-heart-spark:nth-child(5) { animation-delay: -2.4s; }
+
+@keyframes heartSpark {
+    0%, 100% { opacity: 0.25; transform: scale(0.7); }
+    45% { opacity: 1; transform: scale(1.4); }
+}
+
+/* Rim energy stars — flash on arrival, dim, pulse back on */
+.hero-rim-star {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: energyStarCycle 3.6s ease-in-out infinite;
+    animation-delay: calc(var(--i, 0) * -0.3s);
+}
+
+.hero-rim-star line {
+    stroke: rgba(255, 255, 255, 0.28);
+    stroke-width: 0.42;
+    stroke-linecap: round;
+}
+
+.hero-twinkle {
+    fill: #fff;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.85));
+}
+
+@keyframes energyStarCycle {
+    0%, 100% {
+        opacity: 0.32;
+        transform: scale(0.88);
+    }
+    6% {
+        opacity: 0.35;
+        transform: scale(0.9);
+    }
+    14% {
+        opacity: 1;
+        transform: scale(1.45);
+    }
+    24% {
+        opacity: 0.18;
+        transform: scale(0.82);
+    }
+    38% {
+        opacity: 0.88;
+        transform: scale(1.22);
+    }
+    52% {
+        opacity: 0.28;
+        transform: scale(0.92);
+    }
+    66% {
+        opacity: 0.72;
+        transform: scale(1.12);
+    }
+    80% {
+        opacity: 0.22;
+        transform: scale(0.86);
+    }
+}
+
+/* Ring system — aligned to bloom */
+.hero-ring-system {
+    width: min(82vw, 620px);
+    height: min(82vw, 620px);
+    opacity: 0.72;
+}
+
+.hero-ring-system::before {
+    background: radial-gradient(circle,
+        rgba(255, 248, 240, 0.06) 0%,
+        rgba(232, 120, 152, 0.04) 32%,
+        transparent 68%);
+    opacity: 0.45;
+}
+
+.hero-ring {
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow:
+        inset 0 0 50px rgba(255, 255, 255, 0.02),
+        0 0 70px rgba(232, 120, 152, 0.04);
+}
+
+.hero-ring::before { border-color: rgba(255, 255, 255, 0.04); }
+.hero-ring::after { border-color: rgba(255, 255, 255, 0.03); }
+
+.hero-ring-orbit--moon { --mote-color: #ece8f0; --mote-glow: rgba(255, 255, 255, 0.5); }
+.hero-ring-orbit--lavender { --mote-color: #e4dce8; --mote-glow: rgba(255, 255, 255, 0.42); }
+.hero-ring-orbit--rose { --mote-color: #f2dce4; --mote-glow: rgba(255, 220, 230, 0.55); }
+.hero-ring-orbit--forest { --mote-color: #e4ebe6; --mote-glow: rgba(255, 255, 255, 0.38); }
+.hero-ring-orbit--ocean { --mote-color: #e0eaed; --mote-glow: rgba(255, 255, 255, 0.45); }
+.hero-ring-orbit--sunset { --mote-color: #ece6e0; --mote-glow: rgba(255, 255, 255, 0.4); }
+
+.hero-mote {
+    background: radial-gradient(circle at 35% 30%, #fff 0%, var(--mote-color) 55%, transparent 100%);
+    animation: moteTwinkle 4s ease-in-out infinite;
+}
+
+@keyframes moteTwinkle {
+    0%, 100% { opacity: 0.6; filter: brightness(0.88); }
+    50% { opacity: 1; filter: brightness(1.45); }
+}
+
+.hero-title-glow {
+    background: radial-gradient(ellipse at 50% 55%,
+        rgba(255, 230, 238, 0.08) 0%,
+        rgba(255, 255, 255, 0.04) 38%,
+        transparent 72%);
+}
+
+@media (max-width: 768px) {
+    .hero-wire-bloom {
+        width: min(108vw, 620px);
+        height: min(108vw, 620px);
+    }
+    .hero-wire-petal { stroke-width: 0.75; }
+    .hero-power-beam { stroke-width: 0.5; }
+    .hero-ring-system {
+        width: min(88vw, 520px);
+        height: min(88vw, 520px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-wire-bloom,
+    .hero-wire-petals > g,
+    .hero-wire-petal,
+    .hero-wire-petal-inner,
+    .hero-wire-vein,
+    .hero-wire-ring,
+    .hero-wire-spiral,
+    .hero-filigree-arc,
+    .hero-power-beam,
+    .hero-nova-ring,
+    .hero-hex-line,
+    .hero-heart-core,
+    .hero-heart-outline,
+    .hero-heart-inner,
+    .hero-heart-aura,
+    .hero-heart-pulse-ring,
+    .hero-heart-spark,
+    .hero-rim-star,
+    .hero-mote {
+        animation: none !important;
+    }
+    .hero-wire-petal,
+    .hero-wire-petal-inner,
+    .hero-wire-vein,
+    .hero-wire-spiral,
+    .hero-filigree-arc,
+    .hero-heart-seam,
+    .hero-wire-constellation,
+    .hero-hex-line,
+    .hero-wire-ring {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0.3;
+        opacity: 1;
+    }
+    .hero-power-beam { stroke-opacity: 0.22; }
+    .hero-rim-star { opacity: 0.65; transform: scale(1); }
+    .hero-heart-outline { transform: scale(1); }
+    .hero-lines-canvas { display: none; }
+}

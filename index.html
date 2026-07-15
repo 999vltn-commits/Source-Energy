@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ana Zaffiro | Source Energy Alignment &amp; Heart-Centered Healing</title>
+    <meta name="description" content="Source Energy Alignment, heart-centered coaching, space clearing, and group healing with Ana Zaffiro. Book a free 20-minute discovery call.">
+    <meta name="author" content="Ana Zaffiro">
+    <meta property="og:title" content="Ana Zaffiro | Source Energy Alignment &amp; Heart-Centered Healing">
+    <meta property="og:description" content="Energy alignment, heart-centered coaching, space clearing, and group healing with Ana Zaffiro. Trust in the power of your heart.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#040208">
+    <link rel="icon" href="AnaZaffiro1.png" type="image/png">
+    <link rel="preload" href="AnaZaffiro1.png" as="image">
+    <link rel="preload" href="AnaZaffiro2W.png" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="hero-galaxy.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="cosmic-bg" aria-hidden="true"></div>
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span class="scroll-progress-fill"></span></div>
+    <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+    <nav class="nav" id="mainNav" aria-label="Main">
+        <div class="nav-pill-wrap">
+            <div class="nav-shell">
+                <a href="#hero" class="nav-brand" aria-label="Ana Zaffiro — back to top">
+                    <img src="AnaZaffiro1.png" alt="Ana Zaffiro" class="brand-logo brand-logo--nav-name" width="690" height="193" decoding="async">
+                </a>
+                <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Client Love</a></li>
+                    <li><a href="#cta" class="nav-cta">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <section class="hero" id="hero">
+        <canvas class="hero-lines-canvas" id="heroLinesCanvas" aria-hidden="true"></canvas>
+        <div class="hero-deco" aria-hidden="true">
+            <div class="hero-wire-bloom">
+                <svg class="hero-wire-svg" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <radialGradient id="heroHeartGlow" cx="50%" cy="40%" r="50%">
+                            <stop offset="0%" stop-color="#fff" stop-opacity="0.75"/>
+                            <stop offset="40%" stop-color="#f2c0d0" stop-opacity="0.32"/>
+                            <stop offset="75%" stop-color="#e87898" stop-opacity="0.08"/>
+                            <stop offset="100%" stop-color="#e87898" stop-opacity="0"/>
+                        </radialGradient>
+                        <filter id="heroHeartBloom" x="-60%" y="-60%" width="220%" height="220%">
+                            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g transform="translate(300,300)">
+                        <g class="hero-nova-shell">
+                            <circle class="hero-nova-ring" cx="0" cy="0" r="248"/>
+                        </g>
+                        <g class="hero-nova-shell hero-nova-shell--rev">
+                            <circle class="hero-nova-ring hero-nova-ring--b" cx="0" cy="0" r="228"/>
+                        </g>
+                    </g>
+                    <g class="hero-sacred-hex" transform="translate(300,300)">
+                        <polygon class="hero-hex-line" points="0,-195 169,-97.5 169,97.5 0,195 -169,97.5 -169,-97.5"/>
+                        <polygon class="hero-hex-line hero-hex-line--inner" points="0,-128 111,-64 111,64 0,128 -111,64 -111,-64"/>
+                    </g>
+                    <g class="hero-power-beams" transform="translate(300,300)">
+                        <line class="hero-power-beam" style="--i:0" x1="0" y1="8" x2="0" y2="-210"/><line class="hero-power-beam" style="--i:1" x1="0" y1="8" x2="90" y2="-170"/><line class="hero-power-beam" style="--i:2" x1="0" y1="8" x2="150" y2="-90"/><line class="hero-power-beam" style="--i:3" x1="0" y1="8" x2="170" y2="0"/><line class="hero-power-beam" style="--i:4" x1="0" y1="8" x2="150" y2="90"/><line class="hero-power-beam" style="--i:5" x1="0" y1="8" x2="90" y2="170"/><line class="hero-power-beam" style="--i:6" x1="0" y1="8" x2="0" y2="210"/><line class="hero-power-beam" style="--i:7" x1="0" y1="8" x2="-90" y2="170"/><line class="hero-power-beam" style="--i:8" x1="0" y1="8" x2="-170" y2="90"/><line class="hero-power-beam" style="--i:9" x1="0" y1="8" x2="-190" y2="0"/><line class="hero-power-beam" style="--i:10" x1="0" y1="8" x2="-170" y2="-90"/><line class="hero-power-beam" style="--i:11" x1="0" y1="8" x2="-90" y2="-170"/>
+                    </g>
+                    <g class="hero-wire-petals" transform="translate(300,300)">
+                        <g transform="rotate(0)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(30)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(60)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(90)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(120)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(150)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(180)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(210)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(240)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(270)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(300)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                        <g transform="rotate(330)"><path class="hero-wire-petal" d="M0,0 Q6,-100 0,-218 Q-6,-100 0,0"/><path class="hero-wire-vein" d="M0,-18 Q2,-115 0,-205"/><path class="hero-petal-flare" d="M0,-218 l-5,-8 M0,-218 l5,-8"/></g>
+                    </g>
+                    <g class="hero-wire-petals-inner" transform="translate(300,300)">
+                        <g transform="rotate(15)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(45)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(75)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(105)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(135)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(165)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(195)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(225)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(255)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(285)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(315)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                        <g transform="rotate(345)"><path class="hero-wire-petal-inner" d="M0,0 Q3,-55 0,-148 Q-3,-55 0,0"/></g>
+                    </g>
+                    <g class="hero-filigree" transform="translate(300,300)">
+                        <path class="hero-filigree-arc" d="M0,-165 A165,165 0 0,1 143,-82.5"/><path class="hero-filigree-arc" d="M143,-82.5 A165,165 0 0,1 143,82.5"/><path class="hero-filigree-arc" d="M143,82.5 A165,165 0 0,1 0,165"/><path class="hero-filigree-arc" d="M0,165 A165,165 0 0,1 -143,82.5"/><path class="hero-filigree-arc" d="M-143,82.5 A165,165 0 0,1 -143,-82.5"/><path class="hero-filigree-arc" d="M-143,-82.5 A165,165 0 0,1 0,-165"/>
+                    </g>
+                    <g class="hero-wire-inner" transform="translate(300,300)">
+                        <circle class="hero-wire-ring" cx="0" cy="0" r="52"/><circle class="hero-wire-ring" cx="0" cy="0" r="88"/><circle class="hero-wire-ring" cx="0" cy="0" r="128"/>
+                        <path class="hero-wire-spiral hero-wire-spiral--c" d="M0,0 Q14,18 28,14 T52,-8 T58,-42"/>
+                        <path class="hero-wire-spiral hero-wire-spiral--d" d="M0,0 Q-14,18 -28,14 T-52,-8 T-58,-42"/>
+                    </g>
+                    <polygon class="hero-wire-constellation" points="300,90 390,130 450,210 470,300 450,390 390,470 300,510 210,470 130,390 110,300 130,210 210,130"/>
+                    <polygon class="hero-wire-constellation hero-wire-constellation--inner" points="300,155 355,180 385,235 395,300 385,365 355,420 300,445 245,420 215,365 205,300 215,235 245,180"/>
+                    <g class="hero-heart-core" transform="translate(300,300)" filter="url(#heroHeartBloom)">
+                        <circle class="hero-heart-aura" cx="0" cy="1" r="50" fill="url(#heroHeartGlow)"/>
+                        <circle class="hero-heart-pulse-ring" cx="0" cy="1" r="30"/>
+                        <circle class="hero-heart-pulse-ring hero-heart-pulse-ring--b" cx="0" cy="1" r="42"/>
+                        <path class="hero-heart-outline" d="M0,-24 C-9,-44 -38,-30 -38,-9 C-38,12 -20,34 0,50 C20,34 38,12 38,-9 C38,-30 9,-44 0,-24 Z"/>
+                        <path class="hero-heart-inner" d="M0,-12 C-5,-26 -22,-18 -22,-7 C-22,3 -11,18 0,28 C11,18 22,3 22,-7 C22,-18 5,-26 0,-12 Z"/>
+                        <path class="hero-heart-seam" d="M0,-20 C-3,-30 -16,-26 -16,-13 C-16,-1 -7,9 0,16"/>
+                        <g class="hero-heart-crown">
+                            <circle class="hero-heart-spark" cx="0" cy="-34" r="1.3"/><circle class="hero-heart-spark" cx="24" cy="-16" r="1"/><circle class="hero-heart-spark" cx="-24" cy="-16" r="1"/><circle class="hero-heart-spark" cx="17" cy="6" r="0.85"/><circle class="hero-heart-spark" cx="-17" cy="6" r="0.85"/>
+                        </g>
+                    </g>
+                    <g class="hero-wire-nodes">
+                        <g transform="translate(300,90)"><g class="hero-rim-star" style="--i:0"><line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/><circle class="hero-twinkle" cx="0" cy="0" r="2.2"/></g></g>
+                        <g transform="translate(390,130)"><g class="hero-rim-star" style="--i:1"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.8"/></g></g>
+                        <g transform="translate(450,210)"><g class="hero-rim-star" style="--i:2"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/><circle class="hero-twinkle" cx="0" cy="0" r="2"/></g></g>
+                        <g transform="translate(470,300)"><g class="hero-rim-star" style="--i:3"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.7"/></g></g>
+                        <g transform="translate(450,390)"><g class="hero-rim-star" style="--i:4"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.9"/></g></g>
+                        <g transform="translate(390,470)"><g class="hero-rim-star" style="--i:5"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.8"/></g></g>
+                        <g transform="translate(300,510)"><g class="hero-rim-star" style="--i:6"><line x1="-6" y1="0" x2="6" y2="0"/><line x1="0" y1="-6" x2="0" y2="6"/><line x1="-4" y1="-4" x2="4" y2="4"/><line x1="4" y1="-4" x2="-4" y2="4"/><circle class="hero-twinkle" cx="0" cy="0" r="2.2"/></g></g>
+                        <g transform="translate(210,470)"><g class="hero-rim-star" style="--i:7"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.8"/></g></g>
+                        <g transform="translate(130,390)"><g class="hero-rim-star" style="--i:8"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/><circle class="hero-twinkle" cx="0" cy="0" r="2"/></g></g>
+                        <g transform="translate(110,300)"><g class="hero-rim-star" style="--i:9"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.7"/></g></g>
+                        <g transform="translate(130,210)"><g class="hero-rim-star" style="--i:10"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.9"/></g></g>
+                        <g transform="translate(210,130)"><g class="hero-rim-star" style="--i:11"><line x1="-5" y1="0" x2="5" y2="0"/><line x1="0" y1="-5" x2="0" y2="5"/><circle class="hero-twinkle" cx="0" cy="0" r="1.8"/></g></g>
+                    </g>
+                </svg>
+            </div>
+            <div class="hero-ring-system">
+                <div class="hero-ring"></div>
+                <div class="hero-ring-orbit hero-ring-orbit--moon"><span class="hero-mote"></span></div>
+                <div class="hero-ring-orbit hero-ring-orbit--lavender"><span class="hero-mote"></span></div>
+                <div class="hero-ring-orbit hero-ring-orbit--rose"><span class="hero-mote"></span></div>
+                <div class="hero-ring-orbit hero-ring-orbit--forest"><span class="hero-mote"></span></div>
+                <div class="hero-ring-orbit hero-ring-orbit--ocean"><span class="hero-mote"></span></div>
+                <div class="hero-ring-orbit hero-ring-orbit--sunset"><span class="hero-mote"></span></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-title-block">
+                <div class="hero-title-glow" aria-hidden="true"></div>
+                <h1 class="hero-title">
+                    <span class="hero-title-eyebrow">
+                        <span class="hero-title-eyebrow-inner">
+                            <span class="hero-title-word hero-title-word--source" style="--i:0">Source</span>
+                            <span class="hero-title-sep" aria-hidden="true"></span>
+                            <span class="hero-title-word hero-title-word--energy" style="--i:1">Energy</span>
+                        </span>
+                    </span>
+                    <span class="hero-title-main-wrap">
+                        <span class="hero-title-main">Alignment</span>
+                    </span>
+                </h1>
+                <div class="hero-title-rule" aria-hidden="true"><span class="hero-core"></span></div>
+            </div>
+            <div class="hero-tagline">
+                <img src="AnaZaffiro2W.png" alt="Trust in the Power of Your Heart" class="brand-logo brand-logo--hero-tagline" width="950" height="116" decoding="async" fetchpriority="high">
+            </div>
+            <div class="hero-cta-group">
+                <a href="#cta" class="btn-primary">Book a Free Call</a>
+                <a href="#services" class="btn-secondary">View Services</a>
+            </div>
+        </div>
+        <a href="#about" class="hero-scroll" aria-label="Scroll to about">
+            <span>Discover</span>
+            <div class="hero-scroll-line"></div>
+        </a>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-inner fade-in">
+            <p class="section-label">About Ana</p>
+            <h2 class="section-title">The Garden of <em>My Heart</em></h2>
+            <div class="divider"></div>
+
+            <div class="about-composition">
+                <article class="about-panel glass about-panel--letter crystal-card crystal-card--lg">
+                    <div class="about-text">
+                        <p class="about-lead">Hi, I'm <strong>Ana Zaffiro</strong> — and I'm here to walk this journey with you.</p>
+                        <p>My work blends intuitive energy clearing with grounded, real-life support. I'm here for individuals, homes, and businesses who want more clarity, balance, and alignment — whether you're moving through emotional ups and downs, facing big decisions, or feeling that quiet pull to come back home to yourself.</p>
+                        <p>We do this through what I call <em>The Love Alignment Process</em>. It's a gentle mix of energy work, heart-centered coaching, and channeled guidance, but nothing is ever forced or rushed. We simply meet what's ready, move at your pace, and let healing unfold in its own time.</p>
+                        <p>You were never broken — you've just been carrying more than your heart was meant to hold on its own. My role isn't to fix you. It's to help you gently set some of that down, clear what's been weighing you down, and reconnect with the steady wisdom and energy that's always been there for you. When your heart feels safe to open again, you naturally start to feel more like yourself — clear, radiant, and at ease. My hope is to make energy healing feel normal and accessible for everyday people, so more of us can experience the peace and power that comes from living with an open, aligned heart.</p>
+                        <div class="about-closing">
+                            <div class="about-quote-row">
+                                <img src="AnaZaffiro.png" alt="" class="about-profile-img" width="400" height="400" decoding="async" loading="lazy" aria-hidden="true">
+                                <p class="about-quote">"When we trust the heart, energy follows. When energy aligns, life begins to feel possible again — gentle, radiant, and beautifully your own."</p>
+                            </div>
+                            <p class="about-sign">With love,<br><img src="AnaZaffiro1.png" alt="Ana Zaffiro" class="brand-logo brand-logo--sign" width="690" height="193" decoding="async"></p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="about-love-terrace" id="testimonials">
+                    <div class="about-love-bridge" aria-hidden="true">
+                        <span class="about-love-thread"></span>
+                        <span class="about-love-gem"></span>
+                        <span class="about-love-thread about-love-thread--lower"></span>
+                    </div>
+                    <header class="about-love-head">
+                        <h3 class="about-love-title">Client <em>Love</em></h3>
+                        <div class="about-love-divider"></div>
+                    </header>
+                    <div class="love-stage">
+                        <div class="love-panel crystal-card crystal-card--lg" id="loveFlow">
+                            <div class="love-panel-core">
+                                <div class="love-spotlight" id="loveSpotlight" aria-live="polite">
+                                <article class="love-quote is-active">
+                                    <p class="love-quote-text">My channelled message was consistent with what I was going through. It was interesting because everything was over the phone. I learned what I needed to work on from my heart space as well as being in alignment.</p>
+                                    <footer class="love-quote-by">
+                                        <cite class="love-quote-name">Shauna</cite>
+                                        <span class="love-quote-role">Product Manager</span>
+                                    </footer>
+                                </article>
+                                <article class="love-quote">
+                                    <p class="love-quote-text">Ana led me on a truly amazing journey that brought so much peace. Without me telling her, she pinned the pain points, which were addressed in the healing. The messages were insightful, beautiful, and affirming. I am able to acknowledge my past/path from a better place now. Thank you. Ana!</p>
+                                    <footer class="love-quote-by">
+                                        <cite class="love-quote-name">Michelle</cite>
+                                        <span class="love-quote-role">Self Dev Coach</span>
+                                    </footer>
+                                </article>
+                                <article class="love-quote">
+                                    <p class="love-quote-text">Ana was amazing. She made me feel it was safe to tell her anything. She had great insight and for the first time, in as long as I can remember, I felt like I celebrate being a woman. I felt validated and empowered. She gave me suggestions with a purpose. I feel motivated to follow through. I am ready to be the woman I am. Thank you Ana.</p>
+                                    <footer class="love-quote-by">
+                                        <cite class="love-quote-name">Tiffany</cite>
+                                        <span class="love-quote-role">Real Estate Agent</span>
+                                    </footer>
+                                </article>
+                                <article class="love-quote">
+                                    <p class="love-quote-text">I have felt really different since the healing yesterday. I feel more settled, more clear, and more connected than ever. It has truly been life changing!</p>
+                                    <footer class="love-quote-by">
+                                        <cite class="love-quote-name">Julie</cite>
+                                        <span class="love-quote-role">MSW and Hypnotherapist</span>
+                                    </footer>
+                                </article>
+                                <article class="love-quote">
+                                    <p class="love-quote-text">I loved the reading, I felt very special to be chosen and very inspired to do my version. You have a huge heart and it really comes through, I know you are going to be super successful!</p>
+                                    <footer class="love-quote-by">
+                                        <cite class="love-quote-name">Christine</cite>
+                                        <span class="love-quote-role">Reiki Master</span>
+                                    </footer>
+                                </article>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="love-controls" aria-label="Testimonial navigation">
+                            <button type="button" class="love-nav love-nav--prev" id="loveCarouselPrev" aria-label="Previous review">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+                            </button>
+                            <div class="love-dots" id="loveDots" role="tablist" aria-label="Testimonial slides"></div>
+                            <button type="button" class="love-nav love-nav--next" id="loveCarouselNext" aria-label="Next review">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6"/></svg>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-process" id="services">
+        <div class="section-inner fade-in">
+            <div class="sj" id="sj">
+                <canvas class="sj-stars" id="sjStars" aria-hidden="true"></canvas>
+                <div class="sj-frame">
+                    <div class="sj-offerings">
+                        <header class="sj-head">
+                            <p class="section-label">Services</p>
+                            <h2 class="sj-heading">How We <em>Grow Together</em></h2>
+                            <div class="divider"></div>
+                        </header>
+                        <ul class="sj-catalog">
+                            <li class="sj-offer sj-offer--gold" data-sj-offer="gold">
+                                <div class="sj-offer-glyph" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+                                </div>
+                                <div class="sj-offer-copy">
+                                    <div class="sj-offer-title-row">
+                                        <h3>Source Energy Alignment</h3>
+                                        <span class="sj-tag">Virtual Session</span>
+                                    </div>
+                                    <p>A one-on-one virtual session to clear static, restore inner balance, and reconnect with the clarity already within you.</p>
+                                </div>
+                            </li>
+                            <li class="sj-offer sj-offer--pink" data-sj-offer="pink">
+                                <div class="sj-offer-glyph" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                </div>
+                                <div class="sj-offer-copy">
+                                    <div class="sj-offer-title-row">
+                                        <h3>Heart Alignment Coaching</h3>
+                                        <span class="sj-tag">One-on-One</span>
+                                    </div>
+                                    <p>Private coaching that aligns your daily choices with your deepest knowing — so decisions feel grounded, true, and yours again.</p>
+                                </div>
+                            </li>
+                            <li class="sj-offer sj-offer--mint" data-sj-offer="mint">
+                                <div class="sj-offer-glyph" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                </div>
+                                <div class="sj-offer-copy">
+                                    <div class="sj-offer-title-row">
+                                        <h3>Space Clearing</h3>
+                                        <span class="sj-tag">Home &amp; Space</span>
+                                    </div>
+                                    <p>Clear stagnant energy from your home or workspace and receive channeled guidance — so your environment supports peace and focus again.</p>
+                                </div>
+                            </li>
+                            <li class="sj-offer sj-offer--peach" data-sj-offer="peach">
+                                <div class="sj-offer-glyph" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                </div>
+                                <div class="sj-offer-copy">
+                                    <div class="sj-offer-title-row">
+                                        <h3>Group Healing Meditation</h3>
+                                        <span class="sj-tag">Weekly Circle</span>
+                                    </div>
+                                    <p>Weekly guided meditation and channeled messages in community — shared healing held in warmth, intention, and accessible care.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sj-mid" aria-hidden="true">
+                        <div class="sj-separator">
+                            <span class="sj-separator-line"></span>
+                            <span class="sj-separator-gem"></span>
+                            <span class="sj-separator-line"></span>
+                        </div>
+                        <svg class="sj-converge" id="sjConverge" preserveAspectRatio="none"><defs><linearGradient id="sjConvergeGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#c9a7eb"/><stop offset="45%" stop-color="#e87898"/><stop offset="100%" stop-color="#e8c876"/></linearGradient></defs><path class="sj-converge-path" data-sj-offer="gold" d="" fill="none" stroke="url(#sjConvergeGrad)" stroke-width="1.5" stroke-linecap="round"/><path class="sj-converge-path" data-sj-offer="pink" d="" fill="none" stroke="url(#sjConvergeGrad)" stroke-width="1.5" stroke-linecap="round"/><path class="sj-converge-path" data-sj-offer="mint" d="" fill="none" stroke="url(#sjConvergeGrad)" stroke-width="1.5" stroke-linecap="round"/><path class="sj-converge-path" data-sj-offer="peach" d="" fill="none" stroke="url(#sjConvergeGrad)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+
+                    <div class="sj-journey" id="process">
+                        <header class="sj-head">
+                            <p class="section-label">Process</p>
+                            <h2 class="sj-heading">How We <em>Align Together</em></h2>
+                            <div class="divider"></div>
+                        </header>
+                        <div class="sj-timeline-wrap">
+                            <div class="sj-timeline-rail" aria-hidden="true">
+                                <span class="sj-timeline-track"></span>
+                                <span class="sj-timeline-fill"></span>
+                            </div>
+                            <ol class="sj-timeline">
+                                <li class="sj-station">
+                                    <div class="sj-node"><span class="sj-num">I</span></div>
+                                    <div class="sj-station-body">
+                                        <h3>Reach Out</h3>
+                                        <p>Book a free 20-minute discovery call. Share what feels heavy or unclear — I listen, answer your questions, and help you find the right fit. No pressure to continue.</p>
+                                    </div>
+                                </li>
+                                <li class="sj-station sj-station--choose" id="sjChoose">
+                                    <div class="sj-node sj-node--choose"><span class="sj-num">II</span></div>
+                                    <div class="sj-station-body">
+                                        <h3>Choose Your Path</h3>
+                                        <p>We choose the offering that meets you now — alignment, coaching, space clearing, or group circle — with a clear focus and pace that feels right for you.</p>
+                                        <div class="sj-chips">
+                                            <span class="sj-chip sj-chip--gold">Virtual Session</span>
+                                            <span class="sj-chip sj-chip--pink">One-on-One</span>
+                                            <span class="sj-chip sj-chip--mint">Home &amp; Space</span>
+                                            <span class="sj-chip sj-chip--peach">Weekly Circle</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="sj-station">
+                                    <div class="sj-node"><span class="sj-num">III</span></div>
+                                    <div class="sj-station-body">
+                                        <h3>Receive &amp; Align</h3>
+                                        <p>In session, I hold calm space while guiding energy and insight toward what you are ready to release and receive. Nothing is forced — we move at your pace.</p>
+                                    </div>
+                                </li>
+                                <li class="sj-station">
+                                    <div class="sj-node"><span class="sj-num">IV</span></div>
+                                    <div class="sj-station-body">
+                                        <h3>Integrate &amp; Bloom</h3>
+                                        <p>You leave with practical clarity and grounded next steps — so the shifts you feel in session keep opening in your relationships, home, and daily life.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="cta">
+        <div class="section-inner fade-in">
+            <div class="cta-atmosphere" aria-hidden="true">
+                <div class="cta-glow-heart"></div>
+                <div class="cta-glow-ring"></div>
+            </div>
+
+            <p class="section-label">From My Heart</p>
+            <h2 class="section-title cta-title">Ready to Remember<br>How to <em>Bloom?</em></h2>
+            <div class="divider"></div>
+
+            <article class="cta-invitation">
+                <header class="cta-invitation-head">
+                    <div class="cta-seal" aria-hidden="true">
+                        <span class="cta-seal-glow"></span>
+                        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                            <path d="M16 27s-9-6.2-9-13.4C7 9.8 10.6 7 14.2 7c2.2 0 4.2 1.1 5.4 2.8 1.2-1.7 3.2-2.8 5.4-2.8 3.6 0 7.2 2.8 7.2 6.6C32.2 20.8 16 27 16 27z" fill="url(#ctaHeartFill)"/>
+                            <defs>
+                                <linearGradient id="ctaHeartFill" x1="7" y1="7" x2="25" y2="27" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#fff4d6"/>
+                                    <stop offset="0.45" stop-color="#e8c876"/>
+                                    <stop offset="1" stop-color="#e87898"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="cta-from">
+                        <img src="AnaZaffiro.png" alt="" class="cta-portrait" width="400" height="400" decoding="async" loading="lazy" aria-hidden="true">
+                        <p class="cta-from-line"><span class="cta-from-name">Ana Zaffiro</span> invites you to connect</p>
+                    </div>
+                </header>
+
+                    <div class="cta-invitation-letter glass-strong crystal-card crystal-card--lg">
+                        <p class="cta-lead">I would be honored to sit with you for a quiet conversation.</p>
+                        <p class="cta-text">Taking the first step can feel like a lot, and you do not have to figure it out alone. Book a free 20-minute discovery call to talk openly about what you are experiencing and what would feel supportive.</p>
+
+                        <div class="cta-action">
+                            <p class="cta-offer-line">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                                Free 20-Minute Discovery Call
+                            </p>
+                            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" class="btn-primary cta-invite-btn">Schedule Your Call</a>
+                        </div>
+                    </div>
+            </article>
+        </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+        <div class="footer-brand">
+            <img src="AnaZaffiro1.png" alt="Ana Zaffiro" class="brand-logo brand-logo--footer" width="690" height="193" decoding="async">
+        </div>
+        <div class="footer-tagline">
+            <img src="AnaZaffiro2W.png" alt="Trust in the Power of Your Heart" class="brand-logo brand-logo--footer-tagline" width="950" height="116" decoding="async">
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
