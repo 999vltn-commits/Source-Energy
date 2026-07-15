@@ -113,6 +113,9 @@
     }
 
     /* ── Section fade-in ── */
+    const fadeObserverOptions = mobileMq.matches
+        ? { threshold: 0.04, rootMargin: '0px 0px 8% 0px' }
+        : { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
     const fadeObserver = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach((entry) => {
@@ -121,9 +124,12 @@
                 observer.unobserve(entry.target);
             });
         },
-        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        fadeObserverOptions
     );
-    document.querySelectorAll('.fade-in').forEach((el) => fadeObserver.observe(el));
+    document.querySelectorAll('.fade-in').forEach((el) => {
+        if (mobileMq.matches) el.classList.add('visible');
+        else fadeObserver.observe(el);
+    });
 
     /* ── Smooth in-page anchors ── */
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -176,7 +182,10 @@
         let lockedHeight = 0;
 
         const measureMaxHeight = () => {
-            const width = loveSpotlight.clientWidth;
+            const width =
+                loveSpotlight.clientWidth ||
+                loveSpotlight.parentElement?.clientWidth ||
+                Math.min(document.documentElement.clientWidth - 48, 640);
             if (!width) return lockedHeight;
 
             const probe = document.createElement('div');
@@ -297,6 +306,19 @@
         layoutListeners.add(onSpotlightLayout);
         new ResizeObserver(onSpotlightLayout).observe(loveSpotlight);
 
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            const loveVisibilityObserver = new IntersectionObserver(
+                (entries) => {
+                    if (entries.some((entry) => entry.isIntersecting)) {
+                        onSpotlightLayout();
+                    }
+                },
+                { threshold: 0.01, rootMargin: '80px 0px' }
+            );
+            loveVisibilityObserver.observe(aboutSection);
+        }
+
         measureMaxHeight();
         syncLoveUi();
         restartAuto();
@@ -307,6 +329,11 @@
                 syncLoveUi();
             });
         }
+
+        window.addEventListener('load', () => {
+            measureMaxHeight();
+            syncLoveUi();
+        }, { once: true });
     }
 
     /* ── Star field canvas ── */

@@ -487,8 +487,8 @@
 
 @media (max-width: 768px) {
     .hero-wire-bloom {
-        width: min(108vw, 620px);
-        height: min(108vw, 620px);
+        width: min(94vw, 560px);
+        height: min(94vw, 560px);
     }
     .hero-wire-petal { stroke-width: 0.75; }
     .hero-power-beam { stroke-width: 0.5; }

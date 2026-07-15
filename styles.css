@@ -1920,7 +1920,7 @@ section {
 
 @media (max-width: 768px) {
     :root {
-        --glass-blur: 0px;
+        --glass-blur: 12px;
         --nav-tagline-h: 1.55rem;
         --card-bg: rgba(14, 8, 22, 0.94);
         --card-text: #f0e6ec;
@@ -1929,10 +1929,22 @@ section {
 
     body { -webkit-tap-highlight-color: transparent; }
 
+    .about,
+    .services-process,
+    .cta-section {
+        content-visibility: visible;
+        contain-intrinsic-size: none;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+
     .glass,
     .glass-strong {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        backdrop-filter: blur(var(--glass-blur)) saturate(1.05) !important;
+        -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.05) !important;
     }
 
     .nav {
@@ -2063,8 +2075,8 @@ section {
     .hero-tagline { margin-bottom: 1.25rem; }
     .brand-logo--hero-tagline { width: min(16rem, 76vw); max-height: 2.35rem; }
     .hero-ring-system {
-        width: 110vw;
-        height: 110vw;
+        width: min(92vw, 520px);
+        height: min(92vw, 520px);
     }
     .hero-ring-orbit--forest { --mote-size: 8px; }
     .hero-ring-orbit--ocean { --mote-size: 7px; }
@@ -2145,6 +2157,10 @@ section {
     .love-panel-core {
         min-height: 11rem;
         padding: 1.2rem 1.15rem;
+    }
+    .love-spotlight {
+        min-height: 9.5rem;
+        width: 100%;
     }
     .love-quote-text { font-size: 0.98rem; line-height: 1.78; }
     .love-controls { gap: 0.65rem; }
@@ -2377,7 +2393,8 @@ section {
             var(--card-bg-solid) padding-box,
             var(--crystal-border) border-box;
         box-shadow: 0 14px 32px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        contain: strict;
+        contain: layout paint;
+        overflow: visible;
     }
 
     .crystal-card::after {
@@ -2395,10 +2412,13 @@ section {
 
     .glass.crystal-card,
     .glass-strong.crystal-card {
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
+        backdrop-filter: blur(calc(var(--glass-blur) + 2px)) saturate(1.05) !important;
+        -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 2px)) saturate(1.05) !important;
         background:
-            var(--card-bg-solid) padding-box,
+            linear-gradient(168deg,
+                rgba(20, 12, 30, 0.9) 0%,
+                rgba(12, 14, 24, 0.86) 50%,
+                rgba(16, 10, 26, 0.89) 100%) padding-box,
             var(--crystal-border) border-box !important;
     }
 }
@@ -2746,7 +2766,7 @@ section {
         max-width: 10.5rem;
     }
     #cta .cta-invitation-letter {
-        margin-top: 4.75rem;
+        margin-top: 4.25rem;
         padding: 1.75rem 1.25rem 1.85rem;
     }
     #cta .cta-lead {
